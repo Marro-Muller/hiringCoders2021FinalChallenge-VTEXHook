@@ -1,0 +1,32 @@
+{
+  "memory": 256,
+  "ttl": 10,
+  "timeout": 2,
+  "minReplicas": 2,
+  "maxReplicas": 4,
+  "workers": 1,
+  "events": {
+    "allStates": {
+      "sender": "vtex.orders-broadcast",
+      "topics": [
+        "order-created"
+      ]
+    },
+    "someStates": {
+      "sender": "vtex.orders-broadcast",
+      "topics": [
+        "order-created",
+        "on-order-completed",
+        "order-accepted",
+        "payment-pending",
+        "waiting-for-order-authorization",
+        "approve-payment",
+        "payment-approved",
+        "payment-denied",
+        "cancellation-requested",
+        "cancel",
+        "canceled"
+      ]
+    }
+  }
+}
